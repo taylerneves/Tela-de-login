@@ -5,7 +5,7 @@ Cores: background: linear-gradient(135deg, #FADADD, #F28AB2, #D96C6C);
 */
 
 * {
-    font-family: cursive;
+    font-family: 'Times New Roman', Times, serif;
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
