@@ -4,23 +4,111 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tela de login para meu coração</title>
+
     <link rel="stylesheet" href="estilos/style.css">
     <link rel="stylesheet" href="estilos/media-query.css">
+
+    <!-- Ícones -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style>
+        .sugestao {
+            font-size: 0.9em;
+            color: #aaa;
+            cursor: pointer;
+            margin-top: 5px;
+            display: block;
+        }
+
+        .sugestao:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <main>
         <section id="login">
-            <div id="imagem">
-                <!--Aqui vai a imagem na css-->
-            </div>
+            
+            <div id="imagem"></div>
+
             <div id="formulario">
                 <h1>Login</h1>
-                <p>Seja bem-vinda. Se increva para acessar sua conta</p>
-                <form action="login.php" method="post">
+                <p>Seja bem-vinda. Se inscreva para acessar sua conta</p>
+
+                <form action="login.php" method="post" autocomplete="on">
+                    
+                    <!-- EMAIL -->
+                    <div class="campo">
+                        <span class="material-icons">person</span>
+                        
+                        <input 
+                            type="email" 
+                            name="login" 
+                            id="ilogin" 
+                            placeholder="Seu e-mail" 
+                            autocomplete="email"
+                            required
+                        >
+                        <label for="ilogin">Login</label>
+
+                        <!-- Sugestão clicável -->
+                        <span class="sugestao" id="sugestaoEmail">
+                            Usar: oliveirademoura@gmail.com
+                        </span>
+                    </div>
+                    
+                    <!-- SENHA -->
+                    <div class="campo">
+                        <span class="material-icons">lock</span>
+                        
+                        <input 
+                            type="password" 
+                            name="senha" 
+                            id="isenha" 
+                            placeholder="Sua senha"
+                            autocomplete="current-password"
+                            required
+                        >
+                        <label for="isenha">Senha</label>
+                    </div>
+
+                    <input type="submit" value="Entrar">
+
+                    <a href="esqueci.html">
+                        Esqueci a senha 
+                        <i class="material-icons">mail</i>
+                    </a>
 
                 </form>
             </div>
         </section>
     </main>
+
+    <script>
+        const inputEmail = document.getElementById('ilogin');
+        const sugestao = document.getElementById('sugestaoEmail');
+        const emailPadrao = 'oliveirademoura@gmail.com';
+
+        // Ao clicar na sugestão
+        sugestao.addEventListener('click', () => {
+            inputEmail.value = emailPadrao;
+            inputEmail.focus();
+        });
+
+        // Ao focar no campo (se estiver vazio)
+        inputEmail.addEventListener('focus', () => {
+            if (inputEmail.value === '') {
+                inputEmail.value = emailPadrao;
+            }
+        });
+
+        // Aviso ao enviar se for diferente
+        document.querySelector('form').addEventListener('submit', (e) => {
+            if (inputEmail.value !== emailPadrao) {
+                alert('Você está usando um e-mail diferente do sugerido.');
+            }
+        });
+    </script>
 </body>
 </html>

@@ -13,11 +13,18 @@ Cores: background: linear-gradient(135deg, #FADADD, #F28AB2, #D96C6C);
 
 }
 
-body, html{
+body,
+html {
     background-color: rgb(133, 35, 35);
     height: 100vh;
     width: 100vw;
+    
+    
+}
 
+
+body {
+    min-height: 100vh;
 }
 
 main {
@@ -29,7 +36,7 @@ section#login {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     overflow: hidden;
     background-color: white;
     width: 250px;
@@ -38,10 +45,11 @@ section#login {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.849);
     transition: width 1s, height 1s;
     transition-timing-function: ease;
-    
+
 
 }
-section#login > div#imagem {
+
+section#login>div#imagem {
     display: block;
     background: black url(../fotodocoração.jpg) no-repeat;
     background-size: cover;
@@ -49,8 +57,95 @@ section#login > div#imagem {
     height: 200px;
 }
 
-section#login > div#formulario {
+section#login>div#formulario {
     display: block;
     padding: 10px;
 
+}
+
+div#formulario>h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+div#formulario>p {
+    font-size: 0.8em;
+}
+
+.campo {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.campo input {
+    width: 100%;
+    padding: 12px 12px 12px 40px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: 0.3s;
+}
+
+.campo input:focus {
+    border-color: #8B0000;
+    box-shadow: 0 0 5px rgba(139, 0, 0, 0.5);
+}
+
+/* ÍCONE */
+.campo .material-icons {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #999;
+}
+
+/* LABEL */
+.campo label {
+    display: none;
+}
+
+/* BOTÃO */
+input[type="submit"] {
+    background: #8B0000;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+}
+
+input[type="submit"]:hover {
+    background: #a80000;
+}
+
+/* LINK */
+a {
+    margin-top: 15px;
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    color: #8B0000;
+    font-size: 0.9em;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* SUGESTÃO EMAIL */
+.sugestao {
+    font-size: 0.85em;
+    color: #888;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.sugestao:hover {
+    
+    color: #8B0000;
 }

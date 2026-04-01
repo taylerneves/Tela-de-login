@@ -1,41 +1,90 @@
 @charset "UTF-8";
 
-@media screen and (min-width: 768px) and (max-width: 992px) {
-    body{
-        background-image: linear-gradient(135deg, #FF4D6D, #C9184A, #8B0000);
-    }
-    section#login {
-        width: 90vw;
-    }
-    section#login > div#image {
-        float: left;
-        width: 30%;
-        height: 100%;
-
-    }
-    section#login > div#formulario {
-        float: right;
-        width: 70%;
-    }
-}
-
-@media screen and (min-width: 992px) {
+/* CELULAR */
+@media screen and (max-width: 767px) {
     body {
         background-image: linear-gradient(135deg, #FF4D6D, #C9184A, #8B0000);
     }
+
     section#login {
+        display: flex;
+        flex-direction: column;
+        width: 90vw;
+        margin: 0 auto;
+        gap: 20px;
+    }
+
+    #imagem {
+        width: 100%;
+        height: 200px;
+    }
+
+    #formulario {
+        width: 100%;
+        padding: 20px;
+    }
+}
+
+/* TABLET */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    body {
+        background-image: linear-gradient(135deg, #FF4D6D, #C9184A, #8B0000);
+        
+    }
+
+    section#login {
+        display: flex;
+        height: 350px;
+        flex-direction: row;
+        width: 90vw;
+        margin: 0 auto;
+        gap: 20px;
+    }
+
+    #imagem {
+        width: 30%;
+        min-height: 350px;
+        order: 0; /* mantém a imagem à esquerda */
+    }
+
+    #formulario {
+        width: 70%;
+        padding: 30px;
+        order: 1;
+    }
+}
+
+/* DESKTOP */
+@media screen and (min-width: 992px) {
+    body {
+        body {
+        background-image: linear-gradient(135deg, #FF4D6D, #C9184A, #8B0000);
+        margin: 0;      /* REMOVE ESPAÇO EM BAIXO */
+        min-height: 100vh; /* GARANTE QUE OCUPA TODA A TELA */
+    }
+    }
+
+    section#login {
+        display: flex;
+        flex-direction: row;
         width: 950px;
-
+        height: 400px;
+        margin:  auto;
+        gap: 20px;
+        align-items: stretch; /* força imagem e formulário a ter mesma altura */
     }
-    section#login > div#imagem {
-        float: left;
+
+    #imagem {
         width: 50%;
-        height: 100%;
-
+        min-height: 400px;
+        order: 1;
+        display: block; /* evita espaço extra abaixo da imagem */
+        object-fit: cover; /* garante que preencha o container */
     }
-    section#longin > div#formulario {
-        float: right;
+
+    #formulario {
         width: 50%;
+        padding: 40px;
+        order: 0;
     }
-
 }
