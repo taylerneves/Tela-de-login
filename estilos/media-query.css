@@ -60,7 +60,7 @@
         background-image: linear-gradient(135deg, #FF4D6D, #C9184A, #8B0000);
         margin: 0;      /* REMOVE ESPAÇO EM BAIXO */
         min-height: 100vh; /* GARANTE QUE OCUPA TODA A TELA */
-    }
+
     }
 
     section#login {
